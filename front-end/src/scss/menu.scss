@@ -1,0 +1,26 @@
+.menu {
+  flex: 1;
+  padding: 0 10%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  background-color: #5BC3EB;
+  color: #36382E;
+  max-width: 100vw;
+
+  button {
+    height: 40px;
+    padding: 0 10px;
+    aspect-ratio: 3/1;
+    border-radius: 3px;
+    transition: box-shadow ease-in-out .3s, background-color ease-in-out .3s, color ease-in-out .3s;
+    background-color: #EDE6E3;
+
+    &.in {
+      color: #EDE6E3;
+      background-color: #F06449;
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "Sasha",
+      "password": "qwerty123"
+    },
+    {
+      "id": 2,
+      "username": "Andriy",
+      "password": "thinkpad123"
+    },
+    {
+      "id": 3,
+      "username": "Vitya",
+      "password": "aboba_top"
+    }
+  ],
+  "operations": [
+    {
+      "id": 1,
+      "owner_id": 1,
+      "type": "expense",
+      "delta": -100,
+      "currency": "uah",
+      "title": "Купив шаурму",
+      "category": "food",
+      "date": "2024-06-09"
+    },
+    {
+      "id": 2,
+      "owner_id": 1,
+      "type": "expense",
+      "delta": -20,
+      "currency": "uah",
+      "title": "Купив сок",
+      "category": "food",
+      "date": "2024-06-09"
+    },
+    {
+      "id": 3,
+      "owner_id": 1,
+      "type": "income",
+      "delta": 15000,
+      "currency": "uah",
+      "title": "Прийшла ЗП",
+      "category": "work",
+      "date": "2024-06-09"
+    },
+    {
+      "id": 4,
+      "owner_id": 1,
+      "type": "income",
+      "delta": 1100,
+      "currency": "uah",
+      "title": "Андрій вернув",
+      "category": "friend",
+      "date": "2024-06-09"
+    }
+  ]
+}

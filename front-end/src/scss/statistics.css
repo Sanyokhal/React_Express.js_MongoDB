@@ -1,0 +1,32 @@
+.statistics {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 3px;
+  color: #36382E;
+  background-color: #EDE6E3;
+}
+.statistics .title {
+  height: 40px;
+  line-height: 40px;
+}
+.statistics .data {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  flex-direction: column;
+  gap: 5px;
+}
+.statistics .data span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding: 0 20px;
+}
+
+/*# sourceMappingURL=statistics.css.map */
