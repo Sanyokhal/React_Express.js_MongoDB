@@ -2,8 +2,10 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
 const Operation = require('./models/operation.model.js')
+require('dotenv').config()
 const e = require("express");
-const port = 5050
+const port = process.env.PORT
+const mongo_db_url = process.env.MONGODB_URL;
 app.use(express.json())
 app.get('/', (req, res) => {
     res.json(
@@ -12,11 +14,15 @@ app.get('/', (req, res) => {
         }
     )
 })
-app.get('/operations', (req, res) => {
-    let operations = [];
-    res.json({
-        items: operations
-    })
+app.get('/operations', async (req, res) => {
+    try {
+        let operations = await Operation.find({});
+        res.json({
+            items: operations
+        })
+    } catch (error) {
+        res.status(500).json({message: error.message})
+    }
 })
 app.get('/statistics', (req, res) => {
     let statistics = [];
@@ -26,7 +32,6 @@ app.get('/statistics', (req, res) => {
 })
 app.post('/api/operations', async (req, res) => {
     try {
-        console.log(req.body)
         const operation = await Operation.create(req.body)
         res.status(200).json({
             result: true,
@@ -36,11 +41,9 @@ app.post('/api/operations', async (req, res) => {
         res.status(500).json({message: error.message})
     }
 })
-app.listen(port, () => {
-    console.log(`Port ${port} - ready`)
-})
-mongoose.connect('mongodb://localhost:27017/react-test')
+mongoose.connect(mongo_db_url)
     .then(() => {
+        console.log("DATABASE CONNECTED")
         app.listen(port, () => {
             console.log(`Port ${port} - ready`)
         })
